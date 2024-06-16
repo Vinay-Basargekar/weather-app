@@ -1,53 +1,22 @@
-*,
-*::before,
-*::after {
-	box-sizing: border-box;
-}
 * {
 	margin: 0;
 	padding: 0;
 }
-html,
-body {
-	height: 100%;
-	/* if you want 1rem = 10px, easier for calculations */
-	/* font-size: 62.5%; */
-	-webkit-font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-}
-body {
-	/* line-height: 1.5; */
-	-webkit-font-smoothing: antialiased;
-}
 img,
-picture,
-video,
-canvas,
 svg {
 	display: block;
 	max-width: 100%;
 }
 input,
 button,
-textarea,
 select {
 	font: inherit;
 	outline: none;
 }
 p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h2{
 	overflow-wrap: break-word;
 }
-#root,
-#__next {
-	isolation: isolate;
-}
-
 body{
     font-family: monospace;
     color: #fff;
@@ -60,7 +29,6 @@ body{
     height: 100%;
     z-index: -1;
 }
-
 .heading {
     font-size: 3rem;
     font-family: monospace;
@@ -129,61 +97,4 @@ input[type="text"] {
 }
 .wind,.feelsLike{
     margin-left: 23rem;
-}
-
-@media (max-width: 425px) {
-    #background{
-        object-fit: cover;
-    }
-    .heading {
-        font-size: 2rem;
-        margin-left: 1rem;
-        padding-top: 2rem;
-        text-align: center;
-    }
-
-    #search-form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .search-container {
-        position: relative;
-        top: 2rem;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 90%;
-    }
-
-    .search-container input[type="text"],
-    .search-container button {
-        float: none;
-        margin-top: 0.5rem;
-    }
-
-    .weather-data__location {
-        font-size: 1rem;
-        padding-top: 1rem;
-        margin-top: 2rem;
-    }
-
-    .date-and-time {
-        font-size: 1rem;
-        text-align: center;
-    }
-
-    .weather-data {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        font-size: 1rem;
-        padding-top: 1rem;
-        margin-top: 3rem;
-    }
-
-    .temperature, .humidity, .wind, .feelsLike {
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
 }
