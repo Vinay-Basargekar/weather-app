@@ -130,3 +130,60 @@ input[type="text"] {
 .wind,.feelsLike{
     margin-left: 23rem;
 }
+
+@media (max-width: 425px) {
+    #background{
+        object-fit: cover;
+    }
+    .heading {
+        font-size: 2rem;
+        margin-left: 1rem;
+        padding-top: 2rem;
+        text-align: center;
+    }
+
+    #search-form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .search-container {
+        position: relative;
+        top: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        opacity: 90%;
+    }
+
+    .search-container input[type="text"],
+    .search-container button {
+        float: none;
+        margin-top: 0.5rem;
+    }
+
+    .weather-data__location {
+        font-size: 1rem;
+        padding-top: 1rem;
+        margin-top: 2rem;
+    }
+
+    .date-and-time {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .weather-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1rem;
+        padding-top: 1rem;
+        margin-top: 3rem;
+    }
+
+    .temperature, .humidity, .wind, .feelsLike {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+}

@@ -18,9 +18,7 @@ function fetchWeatherData(url) {
 	fetch(url, { mode: "cors" })
 		.then((response) => response.json())
 		.then((data) => {
-			console.log(data);
 			const processedData = processWeatherData(data);
-			console.log(processedData);
 			updateWeatherLocation(processedData);
 			updateWeather(processedData);
 		})
@@ -61,16 +59,9 @@ function updateWeatherLocation(weatherLocData) {
 	const countryElement = document.querySelector(
 		".weather-data__location .country"
 	);
-	const locationElement = document.querySelector(".weather-data__location");
 
 	cityElement.innerText = `${weatherLocData.city},`;
 	countryElement.innerText = weatherLocData.country;
-
-	if (weatherLocData.country.length < 10) {
-		locationElement.style.fontSize = "3rem";
-	} else {
-		locationElement.style.fontSize = "2rem";
-	}
 }
 
 function updateDateTime() {
@@ -93,4 +84,8 @@ function updateDateTime() {
 	dateElement.innerText = formattedDate;
 	timeElement.innerText = formattedTime;
 }
+
 updateDateTime();
+
+// Update date and time every minute
+setInterval(updateDateTime, 60000);
