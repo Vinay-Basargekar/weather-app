@@ -18,12 +18,15 @@ function fetchWeatherData(url) {
 	fetch(url, { mode: "cors" })
 		.then((response) => response.json())
 		.then((data) => {
+			console.log(data);
 			const processedData = processWeatherData(data);
+			console.log(processedData);
 			updateWeatherLocation(processedData);
+			updateWeather(processedData);
 		})
 		.catch((error) => {
 			console.error("Error fetching the Weather Report", error);
-			alert("Failed to fetch the Weather report. Please try again later.");
+			alert("Failed to fetch the Weather. Please try again later.");
 		});
 }
 
@@ -32,25 +35,41 @@ function processWeatherData(data) {
 		city: data.location.name,
 		country: data.location.country,
 		temperature: data.current.temp_c,
+		condition: data.current.condition.text,
 		humidity: data.current.humidity,
 		feelsLike: data.current.feelslike_c,
+		wind: data.current.wind_kph,
 	};
 }
 
-function updateWeatherLocation(weatherData) {
+function updateWeather(weatherData) {
+	const temperatureElement = document.querySelector(".temp");
+	const conditionElement = document.querySelector(".condition");
+	const humidityElement = document.querySelector(".hum");
+	const feelsLikeElement = document.querySelector(".feels");
+	const windElement = document.querySelector(".speed");
+
+	conditionElement.innerText = weatherData.condition;
+	temperatureElement.innerText = `${weatherData.temperature}°C`;
+	humidityElement.innerText = `${weatherData.humidity}%`;
+	feelsLikeElement.innerText = `${weatherData.feelsLike}°C`;
+	windElement.innerText = `${weatherData.wind} km/h`;
+}
+
+function updateWeatherLocation(weatherLocData) {
 	const cityElement = document.querySelector(".weather-data__location .city");
 	const countryElement = document.querySelector(
 		".weather-data__location .country"
 	);
 	const locationElement = document.querySelector(".weather-data__location");
 
-	cityElement.innerText = `${weatherData.city},`;
-	countryElement.innerText = weatherData.country;
+	cityElement.innerText = `${weatherLocData.city},`;
+	countryElement.innerText = weatherLocData.country;
 
-	if (weatherData.country.length < 10) {
+	if (weatherLocData.country.length < 10) {
 		locationElement.style.fontSize = "3rem";
 	} else {
-		locationElement.style.fontSize = "1.7rem";
+		locationElement.style.fontSize = "2rem";
 	}
 }
 

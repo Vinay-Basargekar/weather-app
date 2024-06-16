@@ -107,13 +107,26 @@ input[type="text"] {
     justify-content: center;
     align-items: center;
     font-size: 3rem;
-    margin-left: 3rem;
-    padding-top: 2rem;
+    padding-top: 3rem;
 }
 .date-and-time{
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
+}
+
+.weather-data{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    gap: 2rem;
+    font-size: 2rem;
+    padding-top: 2rem;
+    margin-top: 10rem;
+}
+.temperature,.humidity{
     margin-left: 3rem;
+}
+.wind,.feelsLike{
+    margin-left: 23rem;
 }

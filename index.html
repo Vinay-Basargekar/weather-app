@@ -7,9 +7,11 @@
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
-		<main class="wrapper">
+		<div>
 			<img src="./assets/background.jpeg" alt="background" id="background" />
+
 			<h1 class="heading">WeatherApp</h1>
+
 			<div class="search-container" id="top-nav">
 				<form id="search-form">
 					<input
@@ -21,17 +23,34 @@
 					<button type="submit">Search</button>
 				</form>
 			</div>
-		</main>
-		<div class="hero">
+
+			<div class="weather-data__location">
+				<h2 class="city">Pune,</h2>
+				<h2 class="country">India</h2>
+			</div>
+
+			<div class="date-and-time">
+				<p class="date"></p>
+				<p>|</p>
+				<p class="time"></p>
+			</div>
+
 			<div class="weather-data">
-				<div class="weather-data__location">
-					<h2 class="city">Pune,</h2>
-					<h2 class="country">India</h2>
+				<div class="temperature">
+					<h2 class="condition">Cloudy</h2>
+					<h2 class="temp">25°C</h2>
 				</div>
-				<div class="date-and-time">
-					<p class="date"></p>
-					<p>|</p>
-					<p class="time"></p>
+				<div class="feelsLike">
+					<h2>Feels Like</h2>
+					<h2 class="feels">32.3</h2>
+				</div>
+				<div class="humidity">
+					<h2>Humidity</h2>
+					<h2 class="hum">49%</h2>
+				</div>
+				<div class="wind">
+					<h2>Wind</h2>
+					<h2 class="speed">5.1 km/h</h2>
 				</div>
 			</div>
 		</div>
